@@ -28,4 +28,9 @@ describe("Character", function(){
     expect(testCharacter.body).toEqual(4);
   });
 
+  it('will set skills to play character based upon character class', function(){
+    testCharacter.setSkills();
+    expect(testCharacter.skills).toEqual(["force", "sneak", "lead"]);
+  });
+
 });
