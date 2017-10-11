@@ -41,7 +41,7 @@ A RPG game where a player can have a character, level them, gather items, and ha
 * Players can drop items from their inventory
   * Expected input: "drop BB gun"
   * Expected output: ["lighter and cigarettes"]
-
+*  
 
 
 ## Setup/Installation Requirements

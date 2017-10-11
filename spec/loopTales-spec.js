@@ -1,8 +1,8 @@
-import {Character} from './../js/loopTales.js';
+import {Character, Velociraptor} from './../js/loopTales.js';
 
 
 describe("Character", function(){
-  var testCharacter;
+  let testCharacter;
   beforeEach(function(){
     testCharacter = new Character("Tyler", "Troublemaker", 15);
   });
@@ -46,6 +46,17 @@ describe("Character", function(){
     testCharacter.dropItem("BB gun");
     expect(testCharacter.inventory).toEqual(["lighter and cigarettes"]);
   });
+});
 
-  
+describe("Velociraptor", function(){
+  let testRaptor;
+
+  beforeEach(function(){
+    testRaptor = new Velociraptor();
+  });
+
+  it('will create an instance of a Velociraptor', function(){
+    expect(testRaptor.healthPoints).toEqual(7);
+  });
+
 });

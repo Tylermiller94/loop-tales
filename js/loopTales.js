@@ -54,3 +54,9 @@ export class Character {
     this.inventory.splice(itemIndex, 1);
   }
 }
+
+export class Velociraptor {
+  constructor(){
+    this.healthPoints = 7;
+  }
+}
