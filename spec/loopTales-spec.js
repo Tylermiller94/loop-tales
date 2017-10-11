@@ -57,6 +57,9 @@ describe("Velociraptor", function(){
 
   it('will create an instance of a Velociraptor', function(){
     expect(testRaptor.healthPoints).toEqual(7);
+    expect(testRaptor.moveLevel).toEqual(5);
+    expect(testRaptor.atkDamage).toEqual(3);
+    expect(testRaptor.lootItem).toEqual("velociraptor claw");
+    expect(testRaptor.expDrop).toEqual(200);
   });
-
 });

@@ -58,5 +58,9 @@ export class Character {
 export class Velociraptor {
   constructor(){
     this.healthPoints = 7;
+    this.moveLevel = 5;
+    this.atkDamage = 3;
+    this.lootItem = "velociraptor claw";
+    this.expDrop = 200;
   }
 }
