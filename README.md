@@ -35,6 +35,9 @@ A RPG game where a player can have a character, level them, gather items, and ha
   * Expected input: "Troublemaker"
   * Expected output: "force", "sneak", "lead"
   * Expected secondary output: "lighter and cigarettes"
+* Players can Items to their inventory
+  * Expected input: "pickup BB gun"
+  * Expected output: ["lighter and cigarettes", "BB gun"]
 
 
 

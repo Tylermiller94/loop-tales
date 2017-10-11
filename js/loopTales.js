@@ -44,4 +44,8 @@ export class Character {
       this.inventory = ["razorblade"];
     }
   }
+
+  addItem(item){
+    this.inventory.push(item);
+  }
 }
