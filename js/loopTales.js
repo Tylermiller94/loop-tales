@@ -10,4 +10,7 @@ export class Character {
     return kidTypes;
   }
 
+  setAttributes(body, tech, heart, mind){
+
+  }
 }

@@ -18,4 +18,8 @@ describe("Character", function(){
   it('will create a instance of a character with an age', function(){
     expect(testCharacter.age).toEqual(15);
   });
+
+  it('will return a list of kids types', function() {
+    expect(testCharacter.kidTypes()).toEqual(["Bookworm", "Computer Geek", "Hick", "Jock", "Popular Kid", "Rocker", "Troublemaker", "Weirdo"]);
+  });
 });
