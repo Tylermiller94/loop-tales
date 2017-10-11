@@ -16,6 +16,6 @@ describe("Character", function(){
   });
 
   it('will create a instance of a character with an age', function(){
-    expect(testCharacter.age).toEqual(15)
+    expect(testCharacter.age).toEqual(15);
   });
 });
