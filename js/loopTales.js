@@ -63,4 +63,8 @@ export class Velociraptor {
     this.lootItem = "velociraptor claw";
     this.expDrop = 200;
   }
+
+  takeDamage(value) {
+    this.healthPoints -= value;
+  }
 }

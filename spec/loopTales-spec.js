@@ -62,4 +62,25 @@ describe("Velociraptor", function(){
     expect(testRaptor.lootItem).toEqual("velociraptor claw");
     expect(testRaptor.expDrop).toEqual(200);
   });
+
+  it('will decrease health points when taking damage', function(){
+    testRaptor.takeDamage(2);
+    expect(testRaptor.healthPoints).toEqual(5);
+  });
 });
+
+// describe("HumanoidRobot", function(){
+//   let testRobot;
+//
+//   beforeEach(function(){
+//     testRobot = new HumanoidRobot();
+//   });
+//
+//   it('will create an instance of a HumanoidRobot', function(){
+//     expect(testRobot.healthPoints).toEqual(10);
+//     expect(testRobot.moveLevel).toEqual(3);
+//     expect(testRobot.atkDamage).toEqual(2);
+//     expect(testRobot.lootItem).toEqual("");
+//     expect(testRobot.expDrop).toEqual(100);
+//   });
+// });
