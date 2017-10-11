@@ -62,9 +62,13 @@ export class Velociraptor {
     this.atkDamage = 3;
     this.lootItem = "velociraptor claw";
     this.expDrop = 200;
+    this.isDead = false;
   }
 
   takeDamage(value) {
     this.healthPoints -= value;
+    if(this.healthPoints <= 0) {
+      this.isDead = true;
+    }
   }
 }

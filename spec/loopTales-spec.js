@@ -67,6 +67,11 @@ describe("Velociraptor", function(){
     testRaptor.takeDamage(2);
     expect(testRaptor.healthPoints).toEqual(5);
   });
+
+  it('will be dead if health points are <= 0', function(){
+    testRaptor.takeDamage(7);
+    expect(testRaptor.isDead).toEqual(true);
+  });
 });
 
 // describe("HumanoidRobot", function(){
