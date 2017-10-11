@@ -1,20 +1,22 @@
 // Karma configuration
-// Generated on Wed Oct 11 2017 08:35:56 GMT-0700 (PDT)
-
+// Generated on Tue Oct 10 2017 08:46:17 GMT-0700 (PDT)
+var istanbul = require("browserify-istanbul");
 module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: './',
 
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jquery-3.2.1', 'jasmine', 'browserify'],
 
 
     // list of files / patterns to load in the browser
     files: [
+      'js/*.js',
+      'spec/*-spec.js',
     ],
 
 
@@ -26,13 +28,36 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'js/*.js' : ['browserify'],
+      'spec/*.js': ['browserify'],
+      './build/js/*.js': ['coverage']
     },
+    plugins: [
+      'karma-jquery',
+      'karma-browserify',
+      'karma-jasmine',
+      'karma-chrome-launcher',
+      'karma-jasmine-html-reporter',
+      'karma-coverage'
+    ],
+    browserify: {
+      debug: true,
+      transform: [ [ 'babelify', {presets: ["es2015"]} ] ]
+      //   [
+      //     istanbul({
+      //     ignore: ["node_modules/**", "**/*.spec.js"],
+      //     includeUntested: false,
+      //     defaultIgnore: true
+      //     }),
+      //     { global: true }
+      //  ]
 
+   },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'kjhtml','coverage'],
 
 
     // web server port
