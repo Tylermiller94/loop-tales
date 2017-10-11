@@ -34,6 +34,7 @@ A RPG game where a player can have a character, level them, gather items, and ha
 * Players chosen character will set skills based on character class
   * Expected input: "Troublemaker"
   * Expected output: "force", "sneak", "lead"
+  * Expected secondary output: "lighter and cigarettes"
 
 
 
