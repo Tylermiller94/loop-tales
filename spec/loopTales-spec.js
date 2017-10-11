@@ -28,9 +28,10 @@ describe("Character", function(){
     expect(testCharacter.body).toEqual(4);
   });
 
-  it('will set skills to play character based upon character class', function(){
-    testCharacter.setSkills();
+  it('will set skills and initial item to player character based upon character class', function(){
+    testCharacter.setSkillsAndItem();
     expect(testCharacter.skills).toEqual(["force", "sneak", "lead"]);
+    expect(testCharacter.items).toEqual(["lighter and cigarettes"]);
   });
 
 });

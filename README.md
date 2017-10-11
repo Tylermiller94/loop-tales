@@ -31,7 +31,10 @@ A RPG game where a player can have a character, level them, gather items, and ha
 * Player can set initial attributes during character creation.
   * Expected input: Body: 4, Tech: 4, Heart: 4, Mind: 3
   * Expected output: testCharacter.body = 4
-*
+* Players chosen character will set skills based on character class
+  * Expected input: "Troublemaker"
+  * Expected output: "force", "sneak", "lead"
+
 
 
 ## Setup/Installation Requirements
