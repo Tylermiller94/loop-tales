@@ -38,6 +38,9 @@ A RPG game where a player can have a character, level them, gather items, and ha
 * Players can Items to their inventory
   * Expected input: "pickup BB gun"
   * Expected output: ["lighter and cigarettes", "BB gun"]
+* Players can drop items from their inventory
+  * Expected input: "drop BB gun"
+  * Expected output: ["lighter and cigarettes"]
 
 
 

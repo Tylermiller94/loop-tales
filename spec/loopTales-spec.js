@@ -39,4 +39,13 @@ describe("Character", function(){
     testCharacter.addItem("BB gun");
     expect(testCharacter.inventory).toEqual(["lighter and cigarettes", "BB gun"]);
   });
+
+  it('will drop an item from a players inventory', function(){
+    testCharacter.setSkillsAndItem();
+    testCharacter.addItem("BB gun");
+    testCharacter.dropItem("BB gun");
+    expect(testCharacter.inventory).toEqual(["lighter and cigarettes"]);
+  });
+
+  
 });

@@ -48,4 +48,9 @@ export class Character {
   addItem(item){
     this.inventory.push(item);
   }
+
+  dropItem(item){
+    let itemIndex = this.inventory.indexOf(item);
+    this.inventory.splice(itemIndex, 1);
+  }
 }
