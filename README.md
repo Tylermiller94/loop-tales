@@ -28,6 +28,9 @@ A RPG game where a player can have a character, level them, gather items, and ha
 * Player can only choose a age between 10-15 at character creation
   * Expected input: "17"
   * Expected output: "please enter a valid age you, are far too old/young"
+* Player can set initial attributes during character creation.
+  * Expected input: Body: 4, Tech: 4, Heart: 4, Mind: 3
+  * Expected output: testCharacter.body = 4
 
 
 ## Setup/Installation Requirements

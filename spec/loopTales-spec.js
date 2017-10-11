@@ -22,4 +22,10 @@ describe("Character", function(){
   it('will return a list of kids types', function() {
     expect(testCharacter.kidTypes()).toEqual(["Bookworm", "Computer Geek", "Hick", "Jock", "Popular Kid", "Rocker", "Troublemaker", "Weirdo"]);
   });
+
+  it('will allow user to set initial character attributes', function(){
+    testCharacter.setAttributes(4,4,4,3)
+    expect(testCharacter.body).toEqual(4);
+  });
+
 });

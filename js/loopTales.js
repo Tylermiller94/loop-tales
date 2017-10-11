@@ -11,6 +11,9 @@ export class Character {
   }
 
   setAttributes(body, tech, heart, mind){
-
+    this.body = body;
+    this.tech = tech;
+    this.heart = heart;
+    this.mind = mind;
   }
 }
