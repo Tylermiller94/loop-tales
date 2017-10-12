@@ -53,7 +53,7 @@ gulp.task('build', ['clean'], function(){
   } else {
     gulp.start('jsBrowserify');
   }
-  gulp.start('bower', 'cssBuild');
+  gulp.start('bower', 'cssBuild', 'fontBuild');
 });
 
 gulp.task('jshint', function(){
@@ -101,4 +101,9 @@ gulp.task("cssBuild", function() {
   gulp.src(['css/*.css'])
   .pipe(concat('vendor.css'))
   .pipe(gulp.dest('./build/css'))
+});
+
+gulp.task("fontBuild", function() {
+  gulp.src(['css/*.ttf'])
+  .pipe(gulp.dest('./build/fonts'))
 });

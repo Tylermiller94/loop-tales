@@ -1,4 +1,4 @@
-import {Character, Velociraptor, HumanoidRobot, TRex, SpiderBot, Walker, SpiderTank, Enemy} from './../js/loopTales.js';
+import {Character, Enemy} from './../js/loopTales.js';
 
 
 describe("Character", function(){
@@ -92,8 +92,14 @@ describe("Enemy", function(){
     expect(testEnemy.healthPoints).toEqual(10);
   });
 
-  it('will be dead if health poins <= 0', function(){
+  it('will be dead if health points <= 0', function(){
     testEnemy.takeDamage(20);
     expect(testEnemy.isDead).toEqual(true);
+  });
+
+  it('will deal damage to enemy character reducing its healthPoints', function(){
+
+    let character = new Character ()
+
   });
 });

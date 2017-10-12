@@ -1,1 +1,1 @@
-import {Character} from './../js/loopTales.js';
+import {Character, Enemy} from './../js/loopTales.js';

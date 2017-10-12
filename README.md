@@ -47,6 +47,8 @@ A RPG game where a player can have a character, level them, gather items, and ha
 * Players can attack an enemy dealing damage to them
   * Expected input: "attack"
   * Expected output: "you deal 7 damage to the Spider-tank"
+* Enemies will attack the player dealing damage to them"
+  * Expected output: "the Spider-Tank deals 5 damage"
 
 ## Setup/Installation Requirements
 

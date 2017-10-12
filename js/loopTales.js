@@ -102,4 +102,8 @@ export class Enemy {
       this.isDead = true;
     }
   }
+
+  // attack(value) {
+  //   this.
+  // }
 }
