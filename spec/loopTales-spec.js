@@ -58,8 +58,15 @@ describe("Character", function(){
   });
 
   it('will attempt to evade a enemy by comparing moveLevel', function(){
+    testCharacter.setAttributes(4,4,4,3);
     let enemy = new Enemy("Spider-Tank", 20, 5, 5, "metal plating", 600);
     expect(testCharacter.evade(enemy.moveLevel)).toEqual(false);
+  });
+
+  it('will deal damage to a Enemy reducing its healthPoints', function(){
+    testCharacter.setAttributes(4,4,4,3);
+    let enemy = new Enemy("Spider-Tank", 25, 5, 5, "metal plating", 600, 2);
+    expect(testCharacter.attack(enemy.evadeLevel)).toEqual(true);
   });
 });
 

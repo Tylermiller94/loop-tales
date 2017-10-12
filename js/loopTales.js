@@ -71,17 +71,28 @@ export class Character {
       return false;
     }
   }
+
+  attack(value){
+    if (this.tech >= value) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
+
+
 
 //enemy
 export class Enemy {
-  constructor(enemyType, healthPoints, moveLevel, atkDamage, lootItem, expDrop) {
+  constructor(enemyType, healthPoints, moveLevel, atkDamage, lootItem, expDrop, evadeLevel) {
     this.enemyType = enemyType;
     this.healthPoints = healthPoints;
     this.moveLevel = moveLevel;
     this.atkDamage = atkDamage;
     this.lootItem = lootItem;
     this.expDrop = expDrop;
+    this.evadeLevel = evadeLevel;
     this.isDead = false;
   }
 
