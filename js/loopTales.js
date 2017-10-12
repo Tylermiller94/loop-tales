@@ -63,6 +63,14 @@ export class Character {
       this.isDead = true;
     }
   }
+
+  evade(value){
+    if (this.body >= value) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
 //enemy

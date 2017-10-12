@@ -41,8 +41,12 @@ A RPG game where a player can have a character, level them, gather items, and ha
 * Players can drop items from their inventory
   * Expected input: "drop BB gun"
   * Expected output: ["lighter and cigarettes"]
-*  
-
+*  players can have their characters evade enemies
+  * Expected input: "Evade"
+  * Expected output: "the Spider-Tank is too fast to escape"
+* Players can attack an enemy dealing damage to them
+  * Expected input: "attack"
+  * Expected output: "you deal 7 damage to the Spider-tank"
 
 ## Setup/Installation Requirements
 

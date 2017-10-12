@@ -56,6 +56,11 @@ describe("Character", function(){
     testCharacter.takeDamage(10);
     expect(testCharacter.isDead).toEqual(true);
   });
+
+  it('will attempt to evade a enemy by comparing moveLevel', function(){
+    let enemy = new Enemy("Spider-Tank", 20, 5, 5, "metal plating", 600);
+    expect(testCharacter.evade(enemy.moveLevel)).toEqual(false);
+  });
 });
 
 //enemy
