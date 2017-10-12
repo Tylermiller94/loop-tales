@@ -55,106 +55,16 @@ export class Character {
   }
 }
 
-
-export class Velociraptor {
-  constructor(){
-    this.healthPoints = 7;
-    this.moveLevel = 5;
-    this.atkDamage = 3;
-    this.lootItem = "velociraptor claw";
-    this.expDrop = 200;
+export class Enemy {
+  constructor(enemyType, healthPoints, moveLevel, atkDamage, lootItem, expDrop) {
+    this.enemyType = enemyType;
+    this.healthPoints = healthPoints;
+    this.moveLevel = moveLevel;
+    this.atkDamage = atkDamage;
+    this.lootItem = lootItem;
+    this.expDrop = expDrop;
     this.isDead = false;
   }
-
-  takeDamage(value) {
-    this.healthPoints -= value;
-    if(this.healthPoints <= 0) {
-      this.isDead = true;
-    }
-  }
-}
-
-export class HumanoidRobot {
-  constructor(){
-    this.healthPoints = 8;
-    this.moveLevel = 3;
-    this.atkDamage = 2;
-    this.lootItem = "robot arm";
-    this.expDrop = 75;
-    this.isDead = false;
-  }
-
-  takeDamage(value) {
-    this.healthPoints -= value;
-    if(this.healthPoints <= 0) {
-      this.isDead = true;
-    }
-  }
-}
-
-export class TRex{
-  constructor(){
-    this.healthPoints = 15;
-    this.moveLevel = 2;
-    this.atkDamage = 5;
-    this.lootItem = "giant tooth";
-    this.expDrop = 400;
-    this.isDead = false;
-  }
-
-  takeDamage(value) {
-    this.healthPoints -= value;
-    if(this.healthPoints <= 0) {
-      this.isDead = true;
-    }
-  }
-}
-
-export class SpiderBot {
-  constructor() {
-  this.healthPoints = 5;
-  this.moveLevel = 2;
-  this.atkDamage = 2;
-  this.lootItem = "battery";
-  this.expDrop = 50;
-  this.isDead = false;
-  }
-
-  takeDamage(value) {
-    this.healthPoints -= value;
-    if (this.healthPoints <= 0) {
-      this.isDead = true;
-    }
-  }
-}
-
-export class Walker {
-  constructor() {
-    this.healthPoints = 18;
-    this.moveLevel = 2;
-    this.atkDamage = 3;
-    this.lootItem = "circuit board";
-    this.expDrop = 300;
-    this.isDead = false;
-    }
-
-  takeDamage(value) {
-    this.healthPoints -= value;
-    if (this.healthPoints <= 0) {
-      this.isDead = true;
-    }
-  }
-}
-
-export class SpiderTank {
-  constructor() {
-    this.healthPoints = 20;
-    this.moveLevel = 5;
-    this.atkDamage = 5;
-    this.lootItem = "metal plating";
-    this.expDrop = 600;
-    this.isDead = false;
-    }
 
   takeDamage(value) {
     this.healthPoints -= value;

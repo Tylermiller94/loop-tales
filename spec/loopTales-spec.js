@@ -1,4 +1,4 @@
-import {Character, Velociraptor, HumanoidRobot, TRex, SpiderBot, Walker, SpiderTank} from './../js/loopTales.js';
+import {Character, Velociraptor, HumanoidRobot, TRex, SpiderBot, Walker, SpiderTank, Enemy} from './../js/loopTales.js';
 
 
 describe("Character", function(){
@@ -48,163 +48,30 @@ describe("Character", function(){
   });
 });
 
-//velociraptor
-describe("Velociraptor", function(){
-  let testRaptor;
+//enemy
+describe("Enemy", function(){
+  let testEnemy;
 
   beforeEach(function(){
-    testRaptor = new Velociraptor();
+    testEnemy = new Enemy("Spider-Tank", 20, 5, 5, "metal plating", 600);
   });
 
-  it('will create an instance of a Velociraptor', function(){
-    expect(testRaptor.healthPoints).toEqual(7);
-    expect(testRaptor.moveLevel).toEqual(5);
-    expect(testRaptor.atkDamage).toEqual(3);
-    expect(testRaptor.lootItem).toEqual("velociraptor claw");
-    expect(testRaptor.expDrop).toEqual(200);
+  it('will create an instance of an enemy', function(){
+    expect(testEnemy.enemyType).toEqual("Spider-Tank");
+    expect(testEnemy.healthPoints).toEqual(20);
+    expect(testEnemy.moveLevel).toEqual(5);
+    expect(testEnemy.atkDamage).toEqual(5);
+    expect(testEnemy.lootItem).toEqual("metal plating");
+    expect(testEnemy.expDrop).toEqual(600);
   });
 
-  it('will decrease health points when taking damage', function(){
-    testRaptor.takeDamage(2);
-    expect(testRaptor.healthPoints).toEqual(5);
+  it('will decrease in healthPoints when taking damage', function(){
+    testEnemy.takeDamage(10);
+    expect(testEnemy.healthPoints).toEqual(10);
   });
 
-  it('will be dead if health points are <= 0', function(){
-    testRaptor.takeDamage(7);
-    expect(testRaptor.isDead).toEqual(true);
-  });
-});
-//humanoid robot
-describe("HumanoidRobot", function(){
-  let testRobot;
-
-  beforeEach(function(){
-    testRobot = new HumanoidRobot();
-  });
-
-  it('will create an instance of a HumanoidRobot', function(){
-    expect(testRobot.healthPoints).toEqual(8);
-    expect(testRobot.moveLevel).toEqual(3);
-    expect(testRobot.atkDamage).toEqual(2);
-    expect(testRobot.lootItem).toEqual("robot arm");
-    expect(testRobot.expDrop).toEqual(75);
-  });
-
-  it('will decrease health points when taking damage', function(){
-    testRobot.takeDamage(2);
-    expect(testRobot.healthPoints).toEqual(6);
-  });
-
-  it('will be dead if health points are <= 0', function(){
-    testRobot.takeDamage(8);
-    expect(testRobot.isDead).toEqual(true);
-  });
-});
-
-//trex
-describe("TRex", function(){
-  let testRex;
-
-  beforeEach(function(){
-    testRex = new TRex();
-  });
-
-  it('will create an instance of a TRex', function(){
-    expect(testRex.healthPoints).toEqual(15);
-    expect(testRex.moveLevel).toEqual(2);
-    expect(testRex.atkDamage).toEqual(5);
-    expect(testRex.lootItem).toEqual("giant tooth");
-    expect(testRex.expDrop).toEqual(400);
-  });
-
-  it('will decrease health points when taking damage', function(){
-    testRex.takeDamage(5);
-    expect(testRex.healthPoints).toEqual(10);
-  });
-
-  it('will be dead if health points <= 0', function(){
-    testRex.takeDamage(15);
-    expect(testRex.isDead).toEqual(true);
-  });
-});
-
-//spider-bot
-describe("SpiderBot", function() {
-  let testSpider;
-
-  beforeEach(function(){
-    testSpider = new SpiderBot();
-  });
-
-  it('will create an instance of a SpiderBot', function(){
-    expect(testSpider.healthPoints).toEqual(5);
-    expect(testSpider.moveLevel).toEqual(2);
-    expect(testSpider.atkDamage).toEqual(2);
-    expect(testSpider.lootItem).toEqual("battery");
-    expect(testSpider.expDrop).toEqual(50);
-  });
-
-  it('will decrease health points when taking damage',function(){
-    testSpider.takeDamage(2);
-    expect(testSpider.healthPoints).toEqual(3);
-  });
-
-  it('will be dead if health points <= 0', function(){
-    testSpider.takeDamage(5);
-    expect(testSpider.isDead).toEqual(true);
-  });
-});
-
-//walker
-  describe("Walker",function(){
-    let testWalker;
-
-    beforeEach(function(){
-      testWalker = new Walker();
-    });
-
-  it('will create a instance of a Walker', function(){
-    expect(testWalker.healthPoints).toEqual(18);
-    expect(testWalker.moveLevel).toEqual(2);
-    expect(testWalker.atkDamage).toEqual(3);
-    expect(testWalker.lootItem).toEqual("circuit board");
-    expect(testWalker.expDrop).toEqual(300);
-  });
-
-  it('will decrease in health points when taking damage', function(){
-    testWalker.takeDamage(8);
-    expect(testWalker.healthPoints).toEqual(10);
-  });
-
-  it('will be dead if health points <= 0', function() {
-    testWalker.takeDamage(18);
-    expect(testWalker.isDead).toEqual(true);
-  });
-});
-
-//spider-tank
-  describe("SpiderTank", function(){
-    let testTank;
-
-    beforeEach(function(){
-      testTank = new SpiderTank;
-  });
-
-  it('will create an instance of a Spider-Tank', function() {
-      expect(testTank.healthPoints).toEqual(20);
-      expect(testTank.moveLevel).toEqual(5);
-      expect(testTank.atkDamage).toEqual(5);
-      expect(testTank.lootItem).toEqual("metal plating");
-      expect(testTank.expDrop).toEqual(600);
-  });
-
-  it('will decrease in health points when taking damage', function() {
-    testTank.takeDamage(10);
-    expect(testTank.healthPoints).toEqual(10);
-  });
-
-  it('will be dead if health points <= 0', function(){
-    testTank.takeDamage(20);
-    expect(testTank.isDead).toEqual(true);
+  it('will be dead if health poins <= 0', function(){
+    testEnemy.takeDamage(20);
+    expect(testEnemy.isDead).toEqual(true);
   });
 });
