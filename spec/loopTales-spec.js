@@ -99,3 +99,29 @@ describe("HumanoidRobot", function(){
     expect(testRobot.isDead).toEqual(true);
   });
 });
+
+describe("TRex", function(){
+  let testRex;
+
+  beforeEach(function(){
+    testRex= new TRex();
+  });
+
+  it('will create an instance of a TRex', function(){
+    expect(testRex.healthPoints).toEqual(15);
+    expect(testRex.moveLevel).toEqual(2);
+    exoect(testRex.atkDamage).toEqual(5);
+    expect(testRex.lootItem).toEqual("");
+    expect(testRex.expDrop).toEqual(400);
+  });
+
+  it('will decrease health points qhwn taking damage', function(){
+    testRex.takeDamage(5);
+    expect(testRex.healthPoints).toEqual(10);
+  });
+
+  it('will be dead if health points <= 0', function(){
+    testRex.takeDamage(15);
+    expect(testRex.isDead).toEqual(true);
+  });
+})

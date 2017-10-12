@@ -90,3 +90,21 @@ export class HumanoidRobot {
     }
   }
 }
+
+export class TRex{
+  constructor(){
+    this.healthPoints = 7;
+    this.moveLevel = 5;
+    this.atkDamage = 3;
+    this.lootItem = "velociraptor claw";
+    this.expDrop = 200;
+    this.isDead = false;
+  }
+
+  takeDamage(value) {
+    this.healthPoints -= value;
+    if(this.healthPoints <= 0) {
+      this.isDead = true;
+    }
+  }
+}
