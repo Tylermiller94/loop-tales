@@ -3,6 +3,9 @@ export class Character {
     this.name = name;
     this.kidType = type;
     this.age = age;
+    this.healthPoints = 10;
+    this.currentLevel = 1;
+    this.isDead = false;
   }
 
   kidTypes() {
@@ -53,8 +56,16 @@ export class Character {
     let itemIndex = this.inventory.indexOf(item);
     this.inventory.splice(itemIndex, 1);
   }
+
+  takeDamage(value){
+    this.healthPoints -= value;
+    if (this.healthPoints <= 0) {
+      this.isDead = true;
+    }
+  }
 }
 
+//enemy
 export class Enemy {
   constructor(enemyType, healthPoints, moveLevel, atkDamage, lootItem, expDrop) {
     this.enemyType = enemyType;

@@ -46,6 +46,16 @@ describe("Character", function(){
     testCharacter.dropItem("BB gun");
     expect(testCharacter.inventory).toEqual(["lighter and cigarettes"]);
   });
+
+  it('will decrease in healthpoints when taking damage', function(){
+    testCharacter.takeDamage(8);
+    expect(testCharacter.healthPoints).toEqual(2);
+  });
+
+  it('will be dead if character health points is <= 0', function(){
+    testCharacter.takeDamage(10);
+    expect(testCharacter.isDead).toEqual(true);
+  });
 });
 
 //enemy
