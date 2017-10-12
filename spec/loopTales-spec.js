@@ -1,4 +1,4 @@
-import {Character, Velociraptor, HumanoidRobot, TRex, SpiderBot, Walker} from './../js/loopTales.js';
+import {Character, Velociraptor, HumanoidRobot, TRex, SpiderBot, Walker, SpiderTank} from './../js/loopTales.js';
 
 
 describe("Character", function(){
@@ -179,5 +179,32 @@ describe("SpiderBot", function() {
   it('will be dead if health points <= 0', function() {
     testWalker.takeDamage(18);
     expect(testWalker.isDead).toEqual(true);
+  });
+});
+
+//spider-tank
+  describe("SpiderTank", function(){
+    let testTank;
+
+    beforeEach(function(){
+      testTank = new SpiderTank;
+  });
+
+  it('will create an instance of a Spider-Tank', function() {
+      expect(testTank.healthPoints).toEqual(20);
+      expect(testTank.moveLevel).toEqual(5);
+      expect(testTank.atkDamage).toEqual(5);
+      expect(testTank.lootItem).toEqual("metal plating");
+      expect(testTank.expDrop).toEqual(600);
+  });
+
+  it('will decrease in health points when taking damage', function() {
+    testTank.takeDamage(10);
+    expect(testTank.healthPoints).toEqual(10);
+  });
+
+  it('will be dead if health points <= 0', function(){
+    testTank.takeDamage(20);
+    expect(testTank.isDead).toEqual(true);
   });
 });

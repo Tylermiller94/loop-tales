@@ -145,3 +145,21 @@ export class Walker {
     }
   }
 }
+
+export class SpiderTank {
+  constructor() {
+    this.healthPoints = 20;
+    this.moveLevel = 5;
+    this.atkDamage = 5;
+    this.lootItem = "metal plating";
+    this.expDrop = 600;
+    this.isDead = false;
+    }
+
+  takeDamage(value) {
+    this.healthPoints -= value;
+    if (this.healthPoints <= 0) {
+      this.isDead = true;
+    }
+  }
+}
