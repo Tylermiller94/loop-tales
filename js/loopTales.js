@@ -55,6 +55,7 @@ export class Character {
   }
 }
 
+
 export class Velociraptor {
   constructor(){
     this.healthPoints = 7;
@@ -93,11 +94,11 @@ export class HumanoidRobot {
 
 export class TRex{
   constructor(){
-    this.healthPoints = 7;
-    this.moveLevel = 5;
-    this.atkDamage = 3;
-    this.lootItem = "velociraptor claw";
-    this.expDrop = 200;
+    this.healthPoints = 15;
+    this.moveLevel = 2;
+    this.atkDamage = 5;
+    this.lootItem = "giant tooth";
+    this.expDrop = 400;
     this.isDead = false;
   }
 

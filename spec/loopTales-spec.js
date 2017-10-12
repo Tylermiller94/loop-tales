@@ -1,4 +1,4 @@
-import {Character, Velociraptor, HumanoidRobot} from './../js/loopTales.js';
+import {Character, Velociraptor, HumanoidRobot, TRex} from './../js/loopTales.js';
 
 
 describe("Character", function(){
@@ -110,8 +110,8 @@ describe("TRex", function(){
   it('will create an instance of a TRex', function(){
     expect(testRex.healthPoints).toEqual(15);
     expect(testRex.moveLevel).toEqual(2);
-    exoect(testRex.atkDamage).toEqual(5);
-    expect(testRex.lootItem).toEqual("");
+    expect(testRex.atkDamage).toEqual(5);
+    expect(testRex.lootItem).toEqual("giant tooth");
     expect(testRex.expDrop).toEqual(400);
   });
 
