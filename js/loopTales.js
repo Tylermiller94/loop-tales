@@ -127,3 +127,21 @@ export class SpiderBot {
     }
   }
 }
+
+export class Walker {
+  constructor() {
+    this.healthPoints = 18;
+    this.moveLevel = 2;
+    this.atkDamage = 3;
+    this.lootItem = "circuit board";
+    this.expDrop = 300;
+    this.isDead = false;
+    }
+
+  takeDamage(value) {
+    this.healthPoints -= value;
+    if (this.healthPoints <= 0) {
+      this.isDead = true;
+    }
+  }
+}
