@@ -1,4 +1,4 @@
-import {Character, Velociraptor} from './../js/loopTales.js';
+import {Character, Velociraptor, HumanoidRobot} from './../js/loopTales.js';
 
 
 describe("Character", function(){
@@ -85,7 +85,7 @@ describe("HumanoidRobot", function(){
     expect(testRobot.healthPoints).toEqual(8);
     expect(testRobot.moveLevel).toEqual(3);
     expect(testRobot.atkDamage).toEqual(2);
-    expect(testRobot.lootItem).toEqual("");
+    expect(testRobot.lootItem).toEqual("robot arm");
     expect(testRobot.expDrop).toEqual(75);
   });
 

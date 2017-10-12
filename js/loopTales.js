@@ -72,3 +72,21 @@ export class Velociraptor {
     }
   }
 }
+
+export class HumanoidRobot {
+  constructor(){
+    this.healthPoints = 8;
+    this.moveLevel = 3;
+    this.atkDamage = 2;
+    this.lootItem = "robot arm";
+    this.expDrop = 75;
+    this.isDead = false;
+  }
+
+  takeDamage(value) {
+    this.healthPoints -= value;
+    if(this.healthPoints <= 0) {
+      this.isDead = true;
+    }
+  }
+}
