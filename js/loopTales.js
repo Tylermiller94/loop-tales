@@ -109,3 +109,21 @@ export class TRex{
     }
   }
 }
+
+export class SpiderBot {
+  constructor() {
+  this.healthPoints = 5;
+  this.moveLevel = 2;
+  this.atkDamage = 2;
+  this.lootItem = "battery";
+  this.expDrop = 50;
+  this.isDead = false;
+  }
+
+  takeDamage(value) {
+    this.healthPoints -= value;
+    if (this.healthPoints <= 0) {
+      this.isDead = true;
+    }
+  }
+}

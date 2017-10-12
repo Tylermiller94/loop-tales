@@ -1,4 +1,4 @@
-import {Character, Velociraptor, HumanoidRobot, TRex} from './../js/loopTales.js';
+import {Character, Velociraptor, HumanoidRobot, TRex, SpiderBot} from './../js/loopTales.js';
 
 
 describe("Character", function(){
@@ -48,6 +48,7 @@ describe("Character", function(){
   });
 });
 
+//velociraptor
 describe("Velociraptor", function(){
   let testRaptor;
 
@@ -73,7 +74,7 @@ describe("Velociraptor", function(){
     expect(testRaptor.isDead).toEqual(true);
   });
 });
-
+//humanoid robot
 describe("HumanoidRobot", function(){
   let testRobot;
 
@@ -100,11 +101,12 @@ describe("HumanoidRobot", function(){
   });
 });
 
+//trex
 describe("TRex", function(){
   let testRex;
 
   beforeEach(function(){
-    testRex= new TRex();
+    testRex = new TRex();
   });
 
   it('will create an instance of a TRex', function(){
@@ -115,7 +117,7 @@ describe("TRex", function(){
     expect(testRex.expDrop).toEqual(400);
   });
 
-  it('will decrease health points qhwn taking damage', function(){
+  it('will decrease health points when taking damage', function(){
     testRex.takeDamage(5);
     expect(testRex.healthPoints).toEqual(10);
   });
@@ -124,4 +126,31 @@ describe("TRex", function(){
     testRex.takeDamage(15);
     expect(testRex.isDead).toEqual(true);
   });
-})
+});
+
+//spider-bot
+describe("SpiderBot", function() {
+  let testSpider;
+
+  beforeEach(function(){
+    testSpider = new SpiderBot();
+  });
+
+  it('will create an instance of a SpiderBot', function(){
+    expect(testSpider.healthPoints).toEqual(5);
+    expect(testSpider.moveLevel).toEqual(2)
+    expect(testSpider.atkDamage).toEqual(2)
+    expect(testSpider.lootItem).toEqual("battery")
+    expect(testSpider.expDrop).toEqual(50)
+  });
+
+  it('will decrease health points when taking damage',function(){
+    testSpider.takeDamage(2);
+    expect(testSpider.healthPoints).toEqual(3);
+  });
+
+  it('will be dead if health points <= 0', function(){
+    testSpider.takeDamage(5);
+    expect(testSpider.isDead).toEqual(true);
+  });
+});
